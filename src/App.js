@@ -1,22 +1,51 @@
-import logo from './logo.svg';
+// App.js
+import React, { useState } from 'react';
 import './App.css';
+import Quiz from './Components/Quiz';
+import Login from './Components/Login';
+import Register from './Components/Register';
+import Home from './Components/Home';
 
 function App() {
+  const [loggedInUser, setLoggedInUser] = useState(null);
+  const [showRegister, setShowRegister] = useState(false);
+  const [showQuiz, setShowQuiz] = useState(false);
+
+  const handleLogin = (username) => {
+    setLoggedInUser(username);
+  };
+
+  const switchToRegister = () => {
+    setShowRegister(true);
+  };
+
+  const switchToLogin = () => {
+    setShowRegister(false);
+  };
+
+  const startQuiz = () => {
+    setShowQuiz(true);
+  };
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>History Quiz</h1>
+        {loggedInUser ? (
+          showQuiz ? (
+            <Quiz />
+          ) : (
+            <Home startQuiz={startQuiz} />
+          )
+        ) : (
+          <div>
+            {showRegister ? (
+              <Register handleRegister={() => setShowRegister(false)} switchToLogin={switchToLogin} />
+            ) : (
+              <Login handleLogin={handleLogin} switchToRegister={switchToRegister} />
+            )}
+          </div>
+        )}
       </header>
     </div>
   );
