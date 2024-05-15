@@ -15,6 +15,18 @@ const Quiz = () => {
       answer: '1947',
       hint: '1900 + (5 * 9) + 2',
     },
+    {
+      question: 'When was the Indian Constitution adopted?',
+      options: ['1950', '1947', '1949', '1952'],
+      answer: '1950',
+      hint: '1900 + ((20 - 9) * 5) - 5',
+    },
+    {
+      question: 'In which year did the first successful powered airplane flight occur?',
+      options: ['1903', '1899', '1907', '1911'],
+      answer: '1903',
+      hint: '1900 + 3',
+    }
   ];
 
   const [currentQuestion, setCurrentQuestion] = useState(0);

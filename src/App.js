@@ -32,11 +32,12 @@ function App() {
       <header className="App-header">
         <h1>History Quiz</h1>
         {loggedInUser ? (
-          showQuiz ? (
-            <Quiz />
-          ) : (
-            <Home startQuiz={startQuiz} />
-          )
+          <nav>
+            <ul>
+              {/* <li onClick={startQuiz}>Quiz</li>
+              Add additional navigation items if needed */}
+            </ul>
+          </nav>
         ) : (
           <div>
             {showRegister ? (
@@ -46,6 +47,8 @@ function App() {
             )}
           </div>
         )}
+        {loggedInUser && !showQuiz && <Home startQuiz={startQuiz} />}
+        {showQuiz && <Quiz />}
       </header>
     </div>
   );
