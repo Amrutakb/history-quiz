@@ -26,7 +26,25 @@ const Quiz = () => {
       options: ['1903', '1899', '1907', '1911'],
       answer: '1903',
       hint: '1900 + 3',
-    }
+    },
+    {
+      question: 'When was the Berlin Wall demolished?',
+      options: ['1989', '1991', '1975', '1961'],
+      answer: '1989',
+      hint: '2000 - 11'
+    },
+    {
+      question: 'In which year did Nelson Mandela become the first black President of South Africa?',
+      options: ['1994', '1990', '1985', '2000'],
+      answer: '1994',
+      hint: '1000 * 2 - 6 + 2'
+    },
+    {
+      question: 'When was the first successful human heart transplant performed?',
+      options: ['1967', '1975', '1950', '1980'],
+      answer: '1967',
+      hint: '2000 - 33'
+    },
   ];
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
