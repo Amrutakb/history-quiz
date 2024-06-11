@@ -5,6 +5,7 @@ import Quiz from './Components/Quiz';
 import Login from './Components/Login';
 import Register from './Components/Register';
 import Home from './Components/Home';
+import Tutorial from './Components/Tutorial';
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState(null);
